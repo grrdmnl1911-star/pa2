@@ -1,8 +1,9 @@
 import streamlit as st
 import pandas as pd
-import joblib
 import pickle
-
+import os
+from sklearn.datasets import load_iris
+from sklearn.ensemble import RandomForestClassifier
 
 st.title("Predicción de especie de flor Iris")
 
@@ -10,8 +11,17 @@ st.write("Nombre: Gerardo Arias Alzamora")
 st.write("Código ISIL: 45443379")
 st.write("[Ver cuaderno en Google Colab](https://colab.research.google.com/drive/1pTMeKeg5Lo6yUd3Us0BLZKuKlQ3ncBdw?usp=sharing)")
 
-with open("modelos/modelo_random_forest.pkl", "rb") as archivo:
-    modelo = pickle.load(archivo)
+iris = load_iris()
+
+try:
+    with open("modelos/modelo_random_forest.pkl", "rb") as archivo:
+        modelo = pickle.load(archivo)
+except:
+    X = iris.data
+    y = iris.target
+
+    modelo = RandomForestClassifier(random_state=42)
+    modelo.fit(X, y)
 
 st.subheader("Ingrese los datos de la flor")
 
