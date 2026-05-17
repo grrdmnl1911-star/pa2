@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import pickle
+
 
 st.title("Predicción de especie de flor Iris")
 
@@ -8,7 +10,8 @@ st.write("Nombre: Gerardo Arias Alzamora")
 st.write("Código ISIL: 45443379")
 st.write("[Ver cuaderno en Google Colab](https://colab.research.google.com/drive/1pTMeKeg5Lo6yUd3Us0BLZKuKlQ3ncBdw?usp=sharing)")
 
-modelo = joblib.load("modelos/modelo_random_forest.pkl")
+with open("modelos/modelo_random_forest.pkl", "rb") as archivo:
+    modelo = pickle.load(archivo)
 
 st.subheader("Ingrese los datos de la flor")
 
