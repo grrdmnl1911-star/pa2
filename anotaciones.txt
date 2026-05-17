@@ -1,0 +1,17 @@
+PROMPT UTILIZADO:
+
+Crea un aplicativo en Streamlit para predecir la especie de una flor Iris utilizando un modelo Random Forest. 
+La página debe mostrar:
+- Título del aplicativo.
+- Nombre del estudiante.
+- Código ISIL.
+- Enlace al cuaderno de Google Colab.
+- Campos de entrada para:
+  * Largo del sépalo
+  * Ancho del sépalo
+  * Largo del pétalo
+  * Ancho del pétalo
+- Un botón para realizar la predicción.
+- Mostrar la especie predicha (Setosa, Versicolor o Virginica).
+
+El aplicativo debe estar desarrollado en Python usando Streamlit y scikit-learn.
