@@ -7,8 +7,8 @@ from sklearn.ensemble import RandomForestClassifier
 st.title("Predicción de especie de flor Iris")
 
 # Datos del estudiante
-st.write("Nombre: Kenia Alexis Sandoval Toledo")
-st.write("Código ISIL: TU_CODIGO_ISIL")
+st.write("Nombre: Gerardo Manuel Arias Alzamora")
+st.write("Código ISIL: 45443379")
 
 # Link de Google Colab
 st.write(
