@@ -4,9 +4,9 @@ import joblib
 
 st.title("Predicción de especie de flor Iris")
 
-st.write("Nombre: TU NOMBRE")
-st.write("Código ISIL: TU CÓDIGO")
-st.write("[Ver cuaderno en Google Colab](PEGA_AQUI_TU_LINK_DE_COLAB)")
+st.write("Nombre: Gerardo Arias Alzamora")
+st.write("Código ISIL: 45443379")
+st.write("[Ver cuaderno en Google Colab](https://colab.research.google.com/drive/1pTMeKeg5Lo6yUd3Us0BLZKuKlQ3ncBdw?usp=sharing)")
 
 modelo = joblib.load("modelos/modelo_random_forest.pkl")
 
