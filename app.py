@@ -1,16 +1,13 @@
 import streamlit as st
 import pandas as pd
-import joblib
+from sklearn.datasets import load_iris
+from sklearn.ensemble import RandomForestClassifier
 
 # ==============================
-# TÍTULO
+# TITULO
 # ==============================
 
 st.title("Predicción de especie de flor Iris")
-
-# ==============================
-# DATOS DEL ESTUDIANTE
-# ==============================
 
 st.write("Nombre: Kenia Alexis Sandoval Toledo")
 st.write("Código ISIL: TU_CODIGO")
@@ -20,10 +17,21 @@ st.write(
 )
 
 # ==============================
-# CARGAR MODELO
+# DATASET
 # ==============================
 
-modelo = joblib.load("modelos/modelo_random_forest.pkl")
+iris = load_iris()
+
+X = iris.data
+y = iris.target
+
+# ==============================
+# MODELO RANDOM FOREST
+# ==============================
+
+modelo_rf = RandomForestClassifier(random_state=42)
+
+modelo_rf.fit(X, y)
 
 # ==============================
 # INPUTS
@@ -79,12 +87,12 @@ datos = pd.DataFrame(
 )
 
 # ==============================
-# PREDICCIÓN
+# PREDICCION
 # ==============================
 
 if st.button("Predecir especie"):
 
-    prediccion = modelo.predict(datos)[0]
+    prediccion = modelo_rf.predict(datos)[0]
 
     especies = [
         "setosa",
